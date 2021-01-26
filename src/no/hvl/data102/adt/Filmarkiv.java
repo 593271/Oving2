@@ -9,8 +9,8 @@ public class Filmarkiv implements FILMarkivADT {
 
 	public Filmarkiv(int antall) {
 
-		Film[] filmTabell = new Film[antall];
-		this.antall = filmTabell.length;
+		filmTabell = new Film[antall];
+		antall = 0;
 	}
 
 	// Konstruktører og andre metoder
@@ -20,12 +20,12 @@ public class Filmarkiv implements FILMarkivADT {
 
 	@Override
 	public Film[] hentFilmTabell() {
-
+											
 		return filmTabell;
 	}
 
 	private void utvidKapasitet() {// eks. utvide 10%
-		Film[] hjelpetabell = new Film[(int) Math.ceil(1.1 * filmTabell.length)];
+		Film[] hjelpetabell = new Film[(int) Math.ceil(2 * filmTabell.length)];
 		for (int i = 0; i < filmTabell.length; i++) {
 			hjelpetabell[i] = filmTabell[i];
 		}
@@ -121,8 +121,8 @@ public class Filmarkiv implements FILMarkivADT {
 
 	@Override
 	public int antall() {
-		// TODO Auto-generated method stub
-		return antall;
+		
+		return filmTabell.length;
 	}
 
 }

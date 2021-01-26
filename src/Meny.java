@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+
 import java.util.Scanner;
 
 import javax.swing.JFrame;
@@ -7,14 +8,15 @@ import no.hvl.data102.Sjanger;
 import no.hvl.data102.adt.FILMarkivADT;
 import no.hvl.data102.adt.Fil;
 import no.hvl.data102.adt.Film;
+import no.hvl.data102.adt.Filmarkiv;
 
 public class Meny {
 
 	public static void Meny() {
 
 		System.out.println("Hei velkommen til FilmArkivet" + "\nHva har du lyst til å gjøre?" + "\n");
-		System.out.println("1. Lage et nytt filmarkiv" + "\n2. Ta en titt på et eksisterende?"
-				+ "\n3. Legg til film i eksisterende filmarkiv");
+		System.out.println("1. Legg til film i eksisterende filmarkiv" + "\n2. Ta en titt på et eksisterende?"
+				+ "\n3. Søk film ut i fra sjanger");
 		System.out.println("Tast inn nummeret til handling du har lyst til å gjøre");
 
 		Scanner scan = new Scanner(System.in);
@@ -60,11 +62,14 @@ public class Meny {
 			
 			System.out.println(film);
 			
-			Fil.skrivTilFil(film, "Filmer.txt");
+			Filmarkiv filmer = new Filmarkiv(1);
+			filmer.leggTilFilm(film);
+			
+			Fil.skrivTilFil(filmer, "Filmer.txt");
 
 		} else if (handling == 2) {
 
-			System.out.println("Navn på Filmarkivet?");
+			System.out.println("Navn på Filen?");
 			
 			String arkivnavn = scan3.nextLine();
 
@@ -72,9 +77,6 @@ public class Meny {
 				
 										Fil.leseFraFil(arkivnavn);
 
-			
-										
-			
 			
 
 		} else if (handling == 3) {
@@ -88,7 +90,8 @@ public class Meny {
 		}
 
 		scan.close();
-
+		scan2.close();
+		scan3.close();
 	}
 
 	public static void main(String[] args) {
