@@ -36,6 +36,7 @@ public class Tekstgrensesnitt {
 	// og hvor mange det er i hver sjanger
 	public void skrivUtStatistikk(FILMarkivADT filma) {
 
+		// tidskompleksiteten til denne metoden er O(n) siden.
 		System.out.println("Det finnes totalt " + filma.antall() + " filmer");
 		System.out.println("Det finnes " + filma.antall(Sjanger.ACTION) + " filmer i action sjangeren");
 		System.out.println("Det finnes " + filma.antall(Sjanger.DRAMA) + " filmer i action sjangeren");

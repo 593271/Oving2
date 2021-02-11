@@ -13,10 +13,6 @@ public class Filmarkiv implements FILMarkivADT {
 		antall = 0;
 	}
 
-	// Konstruktører og andre metoder
-	// …fyll ut
-
-	// 20#Walt Disney#Askepott#1950#Fantasy#Warner Bros
 
 	@Override
 	public Film[] hentFilmTabell() {
@@ -32,25 +28,7 @@ public class Filmarkiv implements FILMarkivADT {
 		filmTabell = hjelpetabell;
 	}
 
-//	public void leggTilFilm(Film nyFilm) {
-//
-//		int filmAntall = 0;
-//		for (int i = 0; i < filmTabell.length; i++) {
-//
-//			filmAntall = i;
-//
-//			if (filmTabell[i].equals(null)) {
-//				filmTabell[i] = nyFilm;
-//			}
-//
-//		}
-//
-//		if (filmTabell[filmAntall].equals(null)) {
-//			utvidKapasitet();
-//			nyFilm = filmTabell[filmAntall + 1];
-//		}
-//
-//	}
+
 	@Override
 	public void leggTilFilm(Film nyFilm) {
 		if (antall == filmTabell.length) {
@@ -124,5 +102,9 @@ public class Filmarkiv implements FILMarkivADT {
 		
 		return filmTabell.length;
 	}
+	
+	
 
 }
+
+

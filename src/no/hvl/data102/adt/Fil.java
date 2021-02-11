@@ -14,22 +14,7 @@ import no.hvl.data102.Sjanger;
 
 public class Fil {
 
-	public static void main(String[] args) {
 
-		Film codingMaster1 = new Film(6969, "WilliamP", "CodingMastah", 2021, "Eclipse Moviemakers", Sjanger.ACTION);
-		Film codingMaster2 = new Film(6970, "WilliamP", "CodingMastah", 2021, "Eclipse Moviemakers", Sjanger.ACTION);
-		Film codingMaster3 = new Film(6971, "WilliamP", "CodingMastah", 2021, "Eclipse Moviemakers", Sjanger.ACTION);
-		Film codingMaster4 = new Film(6971, "WilliamP", "CodingMastah", 2021, "Eclipse Moviemakers", Sjanger.ACTION);
-
-
-		Filmarkiv filmer = new Filmarkiv(4);
-		filmer.leggTilFilm(codingMaster1);
-		filmer.leggTilFilm(codingMaster2);
-		filmer.leggTilFilm(codingMaster3);
-		filmer.leggTilFilm(codingMaster4);
-		skrivTilFil(filmer, "Filmer.txt");
-
-	}
 
 	public static void skrivTilFil(Filmarkiv filmarkiv, String filnavn) {
 
@@ -43,7 +28,7 @@ public class Fil {
 		int antall = filmer.length;
 
 		try {
-			System.out.println(antall);
+			
 			FileWriter antallF = new FileWriter(filLokasjon, true);
 
 			PrintWriter antallP = new PrintWriter(antallF);
@@ -58,7 +43,12 @@ public class Fil {
 				ansFil = new FileWriter(filLokasjon, true);
 
 				utfil = new PrintWriter(ansFil);
-
+				
+				if(filmer[i].getProdusent() == null ) {
+					i++;
+				}
+				
+				
 				utfil.print(filmer[i].getFilmnr());
 				utfil.print(SKILLE);
 				utfil.print(filmer[i].getFilmselskap());
@@ -76,7 +66,6 @@ public class Fil {
 
 			}
 		} catch (IOException e) {
-			System.out.println("Feil ved skriving til fil : " + e);
 			System.exit(3);
 		}
 
