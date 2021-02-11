@@ -1,38 +1,12 @@
 package no.hvl.data102.adt;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 import no.hvl.data102.Sjanger;
-import no.hvl.data102.adt.LinearNode;
 
 public class Filmarkiv2 implements FILMarkivADT {
 
-	public static void main(String[] args) {
-		LinearNode<Film> start = new LinearNode<Film>();
-		Film codingMaster1 = new Film(6969, "WilliamP", "CodingMastah", 2021, "Eclipse Moviemakers", Sjanger.ACTION);
-		Film codingMaster2 = new Film(5555, "WilliamP", "CodingMastah", 2021, "Eclipse Moviemakers", Sjanger.ACTION);
-		
-		
-		LinearNode<Film> currentNode = start;
-
-		start.leggTilFilm(codingMaster2);
-		
-		String str = Arrays.toString(start.hentFilmTabell());
-		System.out.println(str);
-		System.out.println(start.getElement());
-		
-		
-		
-		int sum = 0;
-		
-		sum = 1*(1 + 1)/2;
 
 
-		
-		System.out.println(sum);
-
-	}
+	
 
 	private int antall;
 
